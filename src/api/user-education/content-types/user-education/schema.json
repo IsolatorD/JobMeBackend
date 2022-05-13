@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_educations",
+  "info": {
+    "singularName": "user-education",
+    "pluralName": "user-educations",
+    "displayName": "UserEducation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "institution": {
+      "type": "string"
+    },
+    "enrollment": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_educations"
+    }
+  }
+}

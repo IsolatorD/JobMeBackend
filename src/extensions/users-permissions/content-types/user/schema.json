@@ -71,11 +71,52 @@
       "type": "string"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "phone": {
+      "type": "string",
+      "unique": true
+    },
+    "biography": {
+      "type": "text"
+    },
+    "born_date": {
+      "type": "date"
+    },
+    "user_educations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-education.user-education",
+      "mappedBy": "user"
+    },
+    "user_experiences": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-experience.user-experience",
+      "mappedBy": "user"
+    },
+    "user_certifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-certification.user-certification",
+      "mappedBy": "user"
+    },
+    "connections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::connection.connection",
+      "mappedBy": "target"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "user"
     }
   }
 }

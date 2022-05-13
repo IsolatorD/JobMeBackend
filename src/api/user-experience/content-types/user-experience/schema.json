@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_experiences",
+  "info": {
+    "singularName": "user-experience",
+    "pluralName": "user-experiences",
+    "displayName": "UserExperience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_experiences"
+    },
+    "position": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "full_time",
+        "part_time",
+        "independent_professional",
+        "temporal_agreement",
+        "internship_contract"
+      ]
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

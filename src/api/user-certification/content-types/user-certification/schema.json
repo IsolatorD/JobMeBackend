@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_certifications",
+  "info": {
+    "singularName": "user-certification",
+    "pluralName": "user-certifications",
+    "displayName": "UserCertification"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_certifications"
+    },
+    "title": {
+      "type": "string"
+    },
+    "issued_by_company": {
+      "type": "string"
+    },
+    "expedition_date": {
+      "type": "date"
+    },
+    "credential_identification": {
+      "type": "string"
+    }
+  }
+}
